@@ -4,6 +4,7 @@ python:
 before_install:
 - openssl aes-256-cbc -K $encrypted_8f2e1fe0e7f3_key -iv $encrypted_8f2e1fe0e7f3_iv -in lsst-key.enc -out lsst-key -d
 install:
+- chmod 600 lsst-key
 - ssh -i lsst-key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@104.236.155.138
 - mkdir i-logged-on
 - cd i-logged-on

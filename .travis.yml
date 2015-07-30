@@ -2,11 +2,11 @@ language: python
 python:
 - 2.7
 before_install:
-- openssl aes-256-cbc -K $encrypted_8f2e1fe0e7f3_key -iv $encrypted_8f2e1fe0e7f3_iv -in lsst-key.enc -out lsst-key -d
+- openssl aes-256-cbc -K $encrypted_383bc2ea2d21_key -iv $encrypted_383bc2ea2d21_iv -in id_rsa.enc -out id_rsa -d
 install:
-- chmod 600 lsst-key
+- chmod 600 id_rsa
 - eval `ssh-agent -s`
-- ssh-add lsst-key
+- ssh-add id_rsa
 - ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@104.236.155.138
 - mkdir i-logged-on
 - cd i-logged-on
